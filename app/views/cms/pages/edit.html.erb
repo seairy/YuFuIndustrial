@@ -1,0 +1,51 @@
+<div class="pageheader">
+  <h2><i class="fa fa-pencil-square-o"></i> 页面管理 <span>编辑</span></h2>
+</div>
+<div class="contentpanel">
+  <%= render "cms/commons/error_messages", target: @page %>
+  <div class="panel panel-dark">
+    <div class="panel-heading">
+      <h4 class="panel-title">页面信息</h4>
+    </div>
+    <div class="panel-body panel-body-nopadding">
+      <%= form_for [:cms, @page], html: { class: 'form-horizontal form-bordered' } do |f| %>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'page.code' %></label>
+          <div class="col-sm-6">
+            <%= f.text_field :code, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'page.name' %></label>
+          <div class="col-sm-6">
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'page.poster' %></label>
+          <div class="col-sm-6">
+            <%= f.file_field :poster, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'page.zh_content' %></label>
+          <div class="col-sm-8">
+            <%= f.cktext_area :zh_content, cols: 40 %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'page.en_content' %></label>
+          <div class="col-sm-8">
+            <%= f.cktext_area :en_content, cols: 40 %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-12 text-center">
+            <%= f.submit '提交', class: 'btn btn-primary' %>&nbsp;
+            <%= link_to '返回', [:cms, @page], class: 'btn btn-default' %>&nbsp;
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

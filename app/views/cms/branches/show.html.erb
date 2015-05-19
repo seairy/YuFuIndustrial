@@ -1,0 +1,85 @@
+<div class="pageheader">
+  <h2><i class="fa fa-file-text-o"></i> 分支机构管理 <span>查看</span></h2>
+</div>
+<div class="contentpanel">
+  <%= brac_flash %>
+  <div class="panel panel-dark">
+    <div class="panel-heading">
+      <h4 class="panel-title">分支机构信息</h4>
+    </div>
+    <div class="panel-body panel-body-nopadding">
+      <%= form_tag nil, class: 'form-horizontal form-bordered' do %>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'branch.zh_name' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @branch.zh_name, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'branch.zh_name' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @branch.en_name, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'branch.zh_short_name' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @branch.zh_short_name, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'branch.en_short_name' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @branch.en_short_name, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'branch.logo' %></label>
+          <div class="col-sm-6">
+            <%= image_tag @branch.logo, class: 'img-responsive' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'branch.poster' %></label>
+          <div class="col-sm-6">
+            <%= image_tag @branch.poster, class: 'img-responsive' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'branch.zh_description' %></label>
+          <div class="col-sm-8">
+            <%= cktext_area nil, :zh_description, value: @branch.zh_description, ckeditor: { toolbar: 'mini', readOnly: true } %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'branch.en_description' %></label>
+          <div class="col-sm-8">
+            <%= cktext_area nil, :en_description, value: @branch.en_description, ckeditor: { toolbar: 'mini', readOnly: true } %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'branch.zh_short_description' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @branch.zh_short_description, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'branch.en_short_description' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @branch.en_short_description, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'branch.position' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @branch.position, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="panel-footer">
+      <%= link_to '返回', cms_branches_path, class: 'btn btn-default' %>&nbsp;
+      <%= link_to '编辑', edit_cms_branch_path(@branch), class: 'btn btn-primary' %>&nbsp;
+    </div>
+  </div>
+</div>

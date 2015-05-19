@@ -1,0 +1,33 @@
+<div class="pageheader">
+  <h2><i class="fa fa-list"></i> 页面管理 <span>列表</span></h2>
+</div>
+<div class="contentpanel">
+  <%= brac_flash %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-primary table-striped mb30">
+          <thead>
+            <tr>
+              <th><%= brac_t 'page.code' %></th>
+              <th><%= brac_t 'page.name' %></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @pages.each do |page| %>
+            <tr>
+              <td><%= page.code %></td>
+              <td><%= page.name %></td>
+              <td class="table-action">
+                <%= link_to raw('<i class="fa fa-file-text-o"></i>'), [:cms, page] %>
+                <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_cms_page_path(page) %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

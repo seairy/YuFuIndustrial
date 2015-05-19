@@ -1,0 +1,154 @@
+$yahei_font: 'Microsoft Yahei';
+
+body {
+  background: asset-url("frontend/bg.jpg") repeat-x;
+}
+
+.clear {
+  clear: both;
+}
+
+.mb20 {
+  margin-bottom: 20px
+}
+
+.top-bar {
+  width: 100%;
+  height: 38px;
+  border-bottom: 3px #c3974d solid;
+  background-color: #1e1e1e;
+  a {
+    color: #fff;
+    line-height: 34px;
+  }
+}
+
+.bottom-bar {
+  margin: 50px 0 40px;
+}
+
+.header {
+  margin-top: 30px;
+}
+
+nav {
+  margin-top: 24px;
+  li {
+    border-left: 1px #c7c7c7 solid;
+    margin: 0;
+    padding: 0;
+    a {
+      font-family: $yahei_font;
+      font-size: 14px;
+      font-weight: bold;
+      color: #333;
+      &:hover {
+        background-color: transparent !important;
+        color: #aaa;
+      }
+    }
+    div.dropdown {
+      button {
+        border: 0;
+        background-color: transparent;
+        font-family: $yahei_font;
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+      }
+      ul.dropdown-menu {
+        border: 0;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: rgba(51, 51, 51, 0.8);
+        li {
+          border: 0;
+          a {
+            font-size: 12px;
+            color: #fff;
+          }
+        }
+      }
+    }
+    &.actived {
+      background-color: #000;
+    }
+    &.last {
+      border-right: 1px #c7c7c7 solid;
+    }
+  }
+}
+
+.branches-wrap {
+  div.branches-marquee {
+    ul {
+      list-style: none;
+      margin-top: 10px;
+      overflow: hidden;
+      clear: both;
+      li {
+        float: left;
+        width: 180px;
+        height: 106px;
+        border: 1px #000 solid;
+        a {
+          img {
+
+          }
+        }
+      }
+    }
+  }
+}
+
+.branches-control {
+  padding-top: 40px;
+}
+
+.branch {
+  .logo {
+    float: left;
+    width: 100px;
+  }
+  .content {
+    float: right;
+    width: 160px;
+    h3 {
+      margin: 0 0 8px;
+      a {
+        font-family: $yahei_font;
+        font-size: 16px;
+        color: #333;
+      }
+    }
+    .description {
+      color: #999;
+    }
+  }
+}
+
+.content {
+  line-height: 30px;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav > li {
+    padding: 0;
+  }
+  .navbar-nav > li > a {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-nav > li {
+    padding: 0 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-nav > li {
+    padding: 0 20px;
+  }
+}

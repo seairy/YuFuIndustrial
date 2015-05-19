@@ -1,0 +1,33 @@
+<div class="pageheader">
+  <h2><i class="fa fa-list"></i> 分支机构管理 <span>列表</span></h2>
+</div>
+<div class="contentpanel">
+  <%= brac_flash %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table table-primary table-striped mb30">
+          <thead>
+            <tr>
+              <th><%= brac_t 'branch.logo' %></th>
+              <th><%= brac_t 'branch.zh_name' %></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @branches.each do |branch| %>
+            <tr>
+              <td><%= image_tag branch.logo, class: 'img-responsive' %></td>
+              <td><%= branch.zh_name %></td>
+              <td class="table-action">
+                <%= link_to raw('<i class="fa fa-file-text-o"></i>'), [:cms, branch] %>
+                <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_cms_branch_path(branch) %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

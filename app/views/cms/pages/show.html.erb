@@ -1,0 +1,49 @@
+<div class="pageheader">
+  <h2><i class="fa fa-file-text-o"></i> 页面管理 <span>查看</span></h2>
+</div>
+<div class="contentpanel">
+  <%= brac_flash %>
+  <div class="panel panel-dark">
+    <div class="panel-heading">
+      <h4 class="panel-title">页面信息</h4>
+    </div>
+    <div class="panel-body panel-body-nopadding">
+      <%= form_tag nil, class: 'form-horizontal form-bordered' do %>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'page.code' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @page.code, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'page.name' %></label>
+          <div class="col-sm-6">
+            <%= text_field_tag nil, @page.name, readonly: true, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'page.poster' %></label>
+          <div class="col-sm-6">
+            <%= image_tag @page.poster.url, class: 'img-responsive' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'page.zh_content' %></label>
+          <div class="col-sm-8">
+            <%= cktext_area nil, :zh_content, value: @page.zh_content, ckeditor: { toolbar: 'mini', readOnly: true } %>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"><%= brac_t 'page.en_content' %></label>
+          <div class="col-sm-8">
+            <%= cktext_area nil, :en_content, value: @page.en_content, ckeditor: { toolbar: 'mini', readOnly: true } %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="panel-footer">
+      <%= link_to '返回', cms_pages_path, class: 'btn btn-default' %>&nbsp;
+      <%= link_to '编辑', edit_cms_page_path(@page), class: 'btn btn-primary' %>&nbsp;
+    </div>
+  </div>
+</div>
