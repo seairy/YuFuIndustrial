@@ -46,13 +46,10 @@
                 <li><%= link_to '关于裕福', about_path %></li>
                 <li>
                   <div class="dropdown">
-                    <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      分支机构
-                      <span class="caret"></span>
-                    </button>
+                    <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">分支机构</button>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                       <% @branches.each do |branch| %>
-                      <li><%= link_to branch.zh_name %></li>
+                      <li><%= link_to branch.zh_name, branch %></li>
                       <% end %>
                     </ul>
                   </div>
