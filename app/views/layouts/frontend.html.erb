@@ -45,14 +45,12 @@
                 <li><%= link_to '首页', root_path %></li>
                 <li><%= link_to '关于裕福', about_path %></li>
                 <li>
-                  <div class="dropdown">
-                    <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">分支机构</button>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                      <% @branches.each do |branch| %>
-                      <li><%= link_to branch.zh_name, branch %></li>
-                      <% end %>
-                    </ul>
-                  </div>
+                  <%= link_to '分支机构' %>
+                  <ul>
+                    <% @branches.each do |branch| %>
+                    <li><%= link_to branch.zh_name, branch %></li>
+                    <% end %>
+                  </ul>
                 </li>
                 <li class="last"><%= link_to '联系我们', contact_path %></li>
               </ul>
@@ -72,5 +70,17 @@
       </div>
     </div>
     <%= javascript_include_tag 'frontend', 'data-turbolinks-track' => true %>
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $('.navbar-nav > li').bind('mouseover', openSubMenu);
+          $('.navbar-nav > li').bind('mouseout', closeSubMenu);
+          function openSubMenu() {
+            $(this).find('ul').css('visibility', 'visible');  
+          };
+          function closeSubMenu() {
+            $(this).find('ul').css('visibility', 'hidden'); 
+          };
+      });
+      </script>
   </body>
 </html>
