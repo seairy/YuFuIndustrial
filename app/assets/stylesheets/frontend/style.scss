@@ -34,7 +34,7 @@ body {
 
 .navbar-nav {
   margin-top: 24px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
   li {
     border-left: 1px #c7c7c7 solid;
     margin: 0;
@@ -50,6 +50,7 @@ body {
       }
     }
     ul {
+      z-index: 999;
       list-style: none;
       position: absolute;
       visibility: hidden;
@@ -114,6 +115,10 @@ body {
 
 .content {
   line-height: 30px;
+}
+
+.poster {
+  z-index: 1;
 }
 
 @media (min-width: 768px) {
