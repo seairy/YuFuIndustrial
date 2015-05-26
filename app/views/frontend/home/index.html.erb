@@ -10,9 +10,9 @@
           <%= link_to image_tag(branch.logo, class: 'img-responsive'), branch %>
         </div>
         <div class="content">
-          <h3><%= link_to branch.zh_short_name, branch %></h3>
+          <h3><%= link_to branch.short_name(I18n.locale), branch %></h3>
           <div class="description">
-            <%= branch.zh_short_description.truncate(32) %>
+            <%= branch.short_description(I18n.locale).truncate(32) %>
           </div>
         </div>
         <div class="clear"></div>

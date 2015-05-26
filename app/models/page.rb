@@ -1,5 +1,7 @@
 class Page < ActiveRecord::Base
+  include Multilingual
   mount_uploader :poster, PagePosterUploader
+  multilingual :content
   
   class << self
     def home

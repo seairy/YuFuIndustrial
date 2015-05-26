@@ -4,7 +4,7 @@
       <%= image_tag @branch.poster, class: 'img-responsive center-block poster' %>
     </div>
     <div class="col-xs-8 col-xs-offset-2 content">
-      <%= raw @branch.zh_description %>
+      <%= raw @branch.description(I18n.locale) %>
     </div>
   </div>
 </div>
