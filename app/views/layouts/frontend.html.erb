@@ -48,7 +48,7 @@
                   <%= link_to t('views.nav.branches') %>
                   <ul>
                     <% @branches.each do |branch| %>
-                    <li><%= link_to branch.zh_name, branch %></li>
+                    <li><%= link_to branch.name(I18n.locale), branch %></li>
                     <% end %>
                   </ul>
                 </li>
